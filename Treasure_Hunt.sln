@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Treasure_Hunt", "Treasure_Hunt.csproj", "{1972B88E-4F84-4199-8561-66DFC4A42CDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1972B88E-4F84-4199-8561-66DFC4A42CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1972B88E-4F84-4199-8561-66DFC4A42CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1972B88E-4F84-4199-8561-66DFC4A42CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1972B88E-4F84-4199-8561-66DFC4A42CDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
