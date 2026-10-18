@@ -1,0 +1,47 @@
+@using Treasure_Hunt.ViewModels
+@model Treasure_Hunt.ViewModels.LocationViewModel
+<h1>@Model.Location.Name</h1>
+<p>@Model.Location.Description</p>
+
+@* Set title to current location name *@
+@{
+    ViewData["Title"] = Model.Location.Name;
+}
+@* indicator if the shovel has beem picked up or no *@
+@if (@Model.HasShovel)
+{
+    <p>You have the shovel</p>
+}
+@* checking if HasShovel and IsTreasure true and if the view contains the shovel *@
+@if (@Model.Location.IsTreasure && @Model.HasShovel)
+{
+   // handled by HuntController
+}
+else if (!@Model.HasShovel && @Model.Location.IsTreasure)
+{
+    <p>The ground looks interesting. Might need a shovel to check it out</p>
+}
+else if (@Model.Location.HasShovel && !@Model.HasShovel)
+{
+    <a asp-controller="Hunt"
+       asp-action="Show"
+       asp-route-id="@Model.Location.Id"
+       asp-route-hasShovel="true"
+       asp-route-moves="@Model.Moves">Pick Up the Shovel</a>
+}
+
+@* iterate through the paths and carry over LocationId, HasShovel and Number of Moves *@
+@* keeps HasShovel and Moves in the query parameter string *@
+@* increments Moves by 1 everytime *@
+@foreach (var path in Model.Location.Paths)
+{
+    var pathLinkViewModel = new PathLinkViewModel
+    {
+        Path = path,
+        HasShovel = Model.HasShovel,
+        Moves = Model.Moves,
+    };
+    
+    <partial name="_PathPartial" model="@pathLinkViewModel"/>
+
+}

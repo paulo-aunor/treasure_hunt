@@ -1,0 +1,16 @@
+@model Treasure_Hunt.ViewModels.LocationViewModel
+
+@{
+    ViewData["Title"] = "Player Wins!";
+}
+
+@* View to display if the player won (has the shovel and went to the treasure location) *@
+<h1>You found the treasure!</h1>
+<p>It took you @Model.Moves to find the treasure.</p>
+
+@* Link to play again and reset to the first location *@
+<a asp-controller="Hunt"
+   asp-action="Show"
+   asp-route-id="1">
+    Play again
+</a>

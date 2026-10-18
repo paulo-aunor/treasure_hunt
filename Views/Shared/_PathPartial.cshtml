@@ -1,0 +1,10 @@
+@model Treasure_Hunt.ViewModels.PathLinkViewModel
+
+@* ViewModel to display the repeat PathLink in every view *@
+<a asp-controller="Hunt"
+   asp-action="Show"
+   asp-route-id="@Model.Path.TargetLocationId"
+   asp-route-hasShovel="@Model.HasShovel"
+   asp-route-moves="@(Model.Moves + 1)">
+   @Model.Path.Label
+</a>
